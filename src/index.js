@@ -23,6 +23,10 @@ app.delete('/notes/:id', (req, res) => {
 });
 
 const PORT = 3000;
-app.listen(PORT, () => console.log(`API running on port ${PORT}`));
+
+if (require.main === module) {
+    app.listen(PORT, () => console.log(`App corriendo en puerto ${PORT}`));
+  }
+
 
 module.exports = app;
