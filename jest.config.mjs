@@ -1,4 +1,4 @@
-module.exports = {
+exports default  {
   testEnvironment: "node",
   collectCoverage: true,
   coverageDirectory: "coverage"
