@@ -25,7 +25,7 @@ app.delete('/notes/:id', (req, res) => {
 const PORT = 3000;
 
 if (require.main === module) {
-    app.listen(PORT, () => console.log(`Aplicacion esta levantada en el puerto ${PORT}`));
+    app.listen(PORT, () => console.log(`App. esta levantada en el puerto ${PORT}`));
   }
 
 
