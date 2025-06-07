@@ -88,12 +88,12 @@ jobs:
           port: 2500
           script: |
             echo "Conexión exitosa"
-            sudo cd /var/www/
-            sudo git clone https://github.com/sriverar03/reto_3.git
-            sudo cd reto_3
-            sudo git pull origin master
-            sudo docker build -t reto_3 .
-            sudo docker stop reto_3 || true
-            sudo docker rm reto_3 || true
-            sudo docker run -d --name reto_3 -p 3000:3000 reto_3
+            cd /var/www/
+            git clone https://github.com/sriverar03/reto_3.git
+            cd reto_3
+            git pull origin master
+            docker build -t reto_3 .
+            docker stop reto_3 || true
+            docker rm reto_3 || true
+            docker run -d --name reto_3 -p 3000:3000 reto_3
 
