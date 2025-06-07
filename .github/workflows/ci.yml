@@ -88,9 +88,7 @@ jobs:
           port: 2500
           script: |
             echo "Conexión exitosa"
-            cd /var/www/
-            git clone https://github.com/sriverar03/reto_3.git
-            cd reto_3
+            cd /var/www/reto_3
             git pull origin master
             docker build -t reto_3 .
             docker stop reto_3 || true
