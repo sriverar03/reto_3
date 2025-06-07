@@ -26,7 +26,7 @@ const PORT = 3000;
 
 if (require.main === module) {
 
-    app.listen(PORT, () => console.log(`Aplicacion corriendo en puerto ${PORT}`));
+    app.listen(PORT, () => console.log(`App. esta levantada en el puerto ${PORT}`));
 
   }
 
