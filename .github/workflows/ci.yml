@@ -87,10 +87,5 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY }}
           port: 22
           script: |
-            cd /var/www/simple-api
-            git pull origin master
-            docker build -t simple-api .
-            docker stop simple-api || true
-            docker rm simple-api || true
-            docker run -d --name simple-api -p 3000:3000 simple-api
+            echo "Conexión exitosa"
 
