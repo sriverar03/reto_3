@@ -1,8 +1,7 @@
 name: CI Pipeline
 
 on:
-  push:
-    branches: [ master ]
+
   pull_request:
     branches: [ master ]
 
@@ -12,12 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-  
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-  
+
       - name: Install dependencies
         run: npm install
 
@@ -74,7 +73,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: trivy-scan
-    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
     steps:
       - uses: actions/checkout@v3
 
@@ -90,6 +88,13 @@ jobs:
             echo "Conexión exitosa"
             cd /var/www/reto_3
             git pull origin master
+
+            if [ ! -f Dockerfile ]; then
+              echo "❌ No se encontró Dockerfile"
+              exit 1
+            fi 
+
+
             docker build -t simple-api .
             docker stop simple-api || true
             docker rm simple-api || true
